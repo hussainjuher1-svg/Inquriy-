@@ -2,23 +2,16 @@ import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-route
 import { useEffect, lazy, Suspense } from 'react';
 import { Loader2 } from 'lucide-react';
 
-const Home = lazy(() => import('./pages/Home'));
-const How = lazy(() => import('./pages/How'));
-const Security = lazy(() => import('./pages/Security'));
-const Pricing = lazy(() => import('./pages/Pricing'));
-const Customers = lazy(() => import('./pages/Customers'));
-const About = lazy(() => import('./pages/About'));
-const Demo = lazy(() => import('./pages/Demo'));
+const Daybook = lazy(() => import('./daybook/Daybook'));
 
-const AppLayout = lazy(() => import('./app/AppLayout'));
-const CommandCenter = lazy(() => import('./app/CommandCenter'));
-const Sessions = lazy(() => import('./app/Sessions'));
-const PolicyEngine = lazy(() => import('./app/PolicyEngine'));
-const Interpreters = lazy(() => import('./app/Interpreters'));
-const LiveSession = lazy(() => import('./app/LiveSession'));
-const EvidenceAudit = lazy(() => import('./app/EvidenceAudit'));
-const Quality = lazy(() => import('./app/Quality'));
-const Admin = lazy(() => import('./app/Admin'));
+const Home = lazy(() => import('./intevaris/Public').then(m => ({ default: m.Home })));
+const Information = lazy(() => import('./intevaris/Public').then(m => ({ default: m.Information })));
+const AppLayout = lazy(() => import('./intevaris/Workspace'));
+const Overview = lazy(() => import('./intevaris/Workspace').then(m => ({ default: m.Overview })));
+const DataPage = lazy(() => import('./intevaris/Workspace').then(m => ({ default: m.DataPage })));
+const Live = lazy(() => import('./intevaris/Workspace').then(m => ({ default: m.Live })));
+const Policy = lazy(() => import('./intevaris/Workspace').then(m => ({ default: m.Policy })));
+const Settings = lazy(() => import('./intevaris/Workspace').then(m => ({ default: m.Settings })));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -38,25 +31,26 @@ export default function App() {
       <ScrollToTop />
       <Suspense fallback={<Fallback />}>
         <Routes>
+          <Route path="/daybook/*" element={<Daybook />} />
           {/* Public marketing site */}
           <Route path="/" element={<Home />} />
-          <Route path="/how" element={<How />} />
-          <Route path="/security" element={<Security />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/customers" element={<Customers />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/demo" element={<Demo />} />
+          <Route path="/how" element={<Information kind="how" />} />
+          <Route path="/security" element={<Information kind="security" />} />
+          <Route path="/pricing" element={<Information kind="pricing" />} />
+          <Route path="/customers" element={<Information kind="customers" />} />
+          <Route path="/about" element={<Information kind="about" />} />
+          <Route path="/demo" element={<Information kind="demo" />} />
 
           {/* Product workspace */}
           <Route path="/app" element={<AppLayout />}>
-            <Route index element={<CommandCenter />} />
-            <Route path="sessions" element={<Sessions />} />
-            <Route path="policy" element={<PolicyEngine />} />
-            <Route path="interpreters" element={<Interpreters />} />
-            <Route path="live" element={<LiveSession />} />
-            <Route path="audit" element={<EvidenceAudit />} />
-            <Route path="quality" element={<Quality />} />
-            <Route path="admin" element={<Admin />} />
+            <Route index element={<Overview />} />
+            <Route path="sessions" element={<DataPage kind="sessions" />} />
+            <Route path="policy" element={<Policy />} />
+            <Route path="interpreters" element={<DataPage kind="interpreters" />} />
+            <Route path="live" element={<Live />} />
+            <Route path="audit" element={<DataPage kind="audit" />} />
+            <Route path="quality" element={<DataPage kind="quality" />} />
+            <Route path="admin" element={<Settings />} />
           </Route>
 
           <Route path="*" element={<Navigate to="/" replace />} />

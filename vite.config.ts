@@ -6,10 +6,10 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig(async ({ mode }) => {
   const plugins = [react(), tailwindcss()];
   try {
-    // @ts-ignore
+    // @ts-expect-error Optional plugin is injected only in some environments.
     const m = await import('./.vite-source-tags.js');
     plugins.push(m.sourceTags());
-  } catch {}
+  } catch { /* Optional plugin is not present. */ }
 
   const env = loadEnv(mode, process.cwd(), ['VITE_', 'NEXT_PUBLIC_']);
   const processEnvDefines: Record<string, string> = {};
@@ -19,6 +19,7 @@ export default defineConfig(async ({ mode }) => {
 
   return {
     plugins,
+    server: { host: '0.0.0.0', allowedHosts: true as const, proxy: { '/api/daybook': 'http://127.0.0.1:3001' } },
     envPrefix: ['VITE_', 'NEXT_PUBLIC_'],
     define: processEnvDefines,
   };

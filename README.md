@@ -71,3 +71,7 @@ export default defineConfig([
   },
 ])
 ```
+
+## Daybook
+
+Daybook is a separate local-pilot application at `/daybook`. See [daybook/README.md](daybook/README.md) for setup, security limitations, tests, demo seed, and deployment. The original INTEVARIS application remains at its existing routes.

@@ -23,3 +23,9 @@ dist-ssr
 *.sln
 *.sw?
 .vite-source-tags.js
+
+# Daybook local data and secrets
+daybook/data/
+.env
+.env.*
+!.env.example
