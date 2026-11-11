@@ -11,3 +11,89 @@
 .iv-sidebar{overflow-y:auto}
 .iv-app main,.iv-public main{scroll-margin-top:76px}
 @media(max-width:850px){.iv-sidebar:not(.is-open){visibility:hidden}.iv-sidebar.is-open{visibility:visible}.iv-table-head{display:none}}
+
+/* Stage 1: a quieter editorial system, scoped to INTEVARIS. */
+@font-face{font-family:'IV Instrument Sans';src:url('./fonts/instrument-sans-latin-wght-normal.woff2') format('woff2');font-style:normal;font-weight:400 700;font-display:swap}
+@font-face{font-family:'IV Instrument Serif';src:url('./fonts/instrument-serif-latin-400-normal.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:'IV Instrument Serif';src:url('./fonts/instrument-serif-latin-400-italic.woff2') format('woff2');font-style:italic;font-weight:400;font-display:swap}
+.iv-app,.iv-public{--iv-ink:#1e3029;--iv-muted:#52665b;--iv-border:#e4e6de;--iv-bg:#f8f8f3;--iv-green:#315c48;--iv-soft:#eef2eb;font-family:'IV Instrument Sans','Segoe UI',sans-serif}
+.iv-page-heading h1,.iv-section-title h2,.iv-hero h2,.iv-info-panel h3,.iv-public-hero h1,.iv-public-heading h1,.iv-public-section-head h2,.iv-public-callout h2,.iv-public-info-grid aside h3,.iv-result-content>div strong{font-family:'IV Instrument Serif',Georgia,serif}
+.iv-app{background:var(--iv-bg)}
+.iv-public{background:#fafaf6}
+.iv-sidebar{background:#f4f5ee;border-right-color:#e0e4da;padding-top:29px}
+.iv-brand{font-weight:700;letter-spacing:-.9px}
+.iv-brand-mark{background:#2f5945;border-radius:4px}
+.iv-workspace-label{background:#fbfbf8;border-color:#e2e6dd;border-radius:4px;margin-top:33px}
+.iv-nav-group>p{color:#4e6455;font-size:10px;letter-spacing:1.25px}
+.iv-nav-link{border-radius:3px;min-height:41px;font-size:13px;border-left:2px solid transparent;transition:background-color .16s ease,color .16s ease,border-color .16s ease}
+.iv-nav-link.active{background:#e7eee5;border-left-color:#315c48;color:#214c38}
+.iv-connection{background:transparent;border-radius:4px;border-color:#dde4d9}
+.iv-topbar{background:#fafaf7;border-bottom-color:#e6e8e0}
+.iv-search-wrap input{font-size:12px;background:#fff;border-color:#e4e8e0}
+.iv-search-wrap input:focus{border-color:#557d60;box-shadow:0 0 0 3px #dfeade}
+.iv-content{max-width:1440px;padding-top:44px}
+.iv-page-heading{margin-bottom:30px}
+.iv-page-heading h1{font-size:44px;letter-spacing:-.5px}
+.iv-page-heading p{font-size:14px;line-height:1.65}
+.iv-eyebrow,.iv-hero-kicker,.iv-public-overline{letter-spacing:1.35px}
+.iv-page-tag,.iv-status-pill{border-radius:3px}
+.iv-hero{border-radius:4px;background:#e9efe5;border-color:#dce6d9;grid-template-columns:1fr 245px}
+.iv-hero-copy{padding:33px 36px}
+.iv-hero h2{font-size:33px;line-height:1.08}
+.iv-hero-copy>p{font-size:13px;max-width:510px}
+.iv-hero-aside{border-left-color:#d5e1d3}
+.iv-summary-grid{gap:0;border-top:1px solid #dce2d9;border-bottom:1px solid #dce2d9}
+.iv-summary{border:0;border-right:1px solid #dce2d9;border-radius:0;background:transparent;padding:20px 18px;align-items:flex-start}
+.iv-summary:last-child{border-right:0}
+.iv-summary:hover{background:#eff3eb}
+.iv-summary-icon,.iv-quick-icon,.iv-info-icon,.iv-setting-icon,.iv-status-icon{border-radius:3px}
+.iv-summary-body>span{font-size:13px;font-weight:700;color:#253d30}
+.iv-summary-body small{font-size:12px;line-height:1.5;margin:4px 0 10px}
+.iv-summary-body strong{font-family:inherit;font-size:10px;line-height:1.3;letter-spacing:.6px;text-transform:uppercase;font-weight:700;color:#566b5e;margin:0}
+.iv-panel{border-radius:4px;border-color:#e0e4dc}
+.iv-panel-head{padding:21px 23px;border-bottom-color:#e9ede7}
+.iv-panel-head h3{font-size:15px}
+.iv-panel-head p,.iv-empty p,.iv-info-panel p{font-size:13px;line-height:1.65}
+.iv-empty-icon{border-radius:4px}
+.iv-empty h4{font-size:13px;font-weight:700}
+.iv-data-panel .iv-empty,.iv-feature-main .iv-empty{min-height:220px;align-items:flex-start;text-align:left;padding:38px 28px}
+.iv-data-panel .iv-empty p,.iv-feature-main .iv-empty p{max-width:410px}
+.iv-info-panel,.iv-public-info-grid aside{background:#f1f3ed;border:0;border-left:3px solid #b7c8b4;border-radius:0;padding:26px}
+.iv-inline-notice,.iv-settings-note{border-radius:4px}
+.iv-inline-notice p{font-size:13px}
+.iv-setting-row{padding:22px 24px}
+.iv-quick-grid a{border-radius:4px;transition:background-color .16s ease,border-color .16s ease}
+.iv-quick-grid a:hover{background:#f2f6ef}
+.iv-primary,.iv-public-button,.iv-public-outline{border-radius:4px;transition:background-color .16s ease,border-color .16s ease,color .16s ease}
+.iv-signals>label{border-radius:4px;transition:background-color .16s ease,border-color .16s ease}
+.iv-signals>label:has(input:checked){border-color:#8aaa8f;background:#f0f5ee}
+.iv-signals>label:hover{border-color:#a9bfaa}
+.iv-public-nav{background:#fafaf6}
+.iv-public-links a{position:relative;font-size:13px}
+.iv-public-links a.active:after{content:'';position:absolute;left:0;right:0;bottom:-12px;height:2px;background:#315c48}
+.iv-public-hero{gap:64px;padding-top:92px;padding-bottom:86px}
+.iv-public-hero h1{letter-spacing:-1.1px}
+.iv-public-hero-copy>p{font-size:16px;color:#53665b}
+.iv-public-visual{min-height:395px;background:#263f34;color:#f5f5eb;border:0;border-radius:4px;padding:30px 32px;display:flex;flex-direction:column}
+.iv-visual-top{display:flex;justify-content:space-between;color:#c9d8c9;font-size:10px;font-weight:700;letter-spacing:1.2px}
+.iv-visual-center{display:block;flex:1;padding:47px 0 34px}
+.iv-visual-kicker{font-size:10px;font-weight:700;letter-spacing:1.4px;color:#cad9c8}
+.iv-visual-center h2{font:400 39px/1.05 'IV Instrument Serif',Georgia,serif;letter-spacing:-.3px;color:#fff;margin:13px 0}
+.iv-visual-center h2 em{color:#d8e6d2;font-weight:400}
+.iv-visual-center p{color:#d0ddd0;font-size:13px;line-height:1.6;letter-spacing:0;font-weight:400;max-width:320px;margin:0}
+.iv-visual-status{border-top:1px solid #71887a}
+.iv-visual-status>div{display:flex;justify-content:space-between;gap:20px;padding:11px 0;border-bottom:1px solid #71887a;font-size:12px;color:#ecf2e9}
+.iv-visual-status b{font-size:11px;font-weight:600;color:#d0ddd0;white-space:nowrap}
+.iv-public-strip{border-color:#e4e8de}
+.iv-public-section-head>p,.iv-public-feature-grid p,.iv-public-callout p,.iv-public-info-main p{font-size:14px;line-height:1.8}
+.iv-public-feature-grid article>span{border-radius:3px}
+.iv-public-callout{background:#eff2e9;border-color:#e5eadf;border-radius:4px}
+.iv-public-heading{padding-bottom:38px}
+.iv-public-heading p{font-size:15px}
+.iv-public-info-main h2{font-size:16px;font-weight:650}
+.iv-public-info-main>section{padding:28px 0}
+.iv-public-footer{background:#f2f4ed}
+@media(max-width:1100px){.iv-public-hero{gap:32px}.iv-content{padding-left:28px;padding-right:28px}}
+@media(max-width:850px){.iv-hero{grid-template-columns:1fr}.iv-content{padding:30px 20px}.iv-page-heading h1{font-size:39px}.iv-public-hero{padding:58px 22px;gap:36px}.iv-public-visual{min-height:340px}.iv-visual-center{padding:35px 0 26px}.iv-data-panel .iv-empty,.iv-feature-main .iv-empty{min-height:190px}.iv-summary{padding:16px 12px}}
+@media(max-width:480px){.iv-content{padding:27px 18px}.iv-page-heading h1{font-size:36px}.iv-hero-copy{padding:26px 24px}.iv-hero h2{font-size:29px}.iv-summary-grid{display:block}.iv-summary{border-right:0;border-bottom:1px solid #dce2d9;padding:15px 4px}.iv-summary:last-child{border-bottom:0}.iv-summary-body strong{margin-top:6px}.iv-summary-body small{margin:3px 0}.iv-visual-center h2{font-size:35px}.iv-public-visual{padding:24px}.iv-info-panel,.iv-public-info-grid aside{padding:23px}.iv-public-info-main>section{padding:22px 0}}
+@media(prefers-reduced-motion:reduce){.iv-nav-link,.iv-summary,.iv-quick-grid a,.iv-primary,.iv-public-button,.iv-public-outline,.iv-signals>label{transition:none}}
